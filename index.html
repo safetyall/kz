@@ -768,7 +768,12 @@
             transform: scale(0.9);
             transition: var(--transition);
             box-shadow: 0 0 50px rgba(0,242,255,0.1);
+
+            /* ----- ИЗМЕНЕНИЯ ЗДЕСЬ (ДЛЯ СКРОЛЛА) ----- */
+            max-height: 90vh; /* Ограничиваем высоту окна 90% от экрана */
+            overflow-y: auto; /* Включаем прокрутку внутри окна */
         }
+
         .modal-overlay.active .modal-window { transform: scale(1); }
         
         .close-modal {
