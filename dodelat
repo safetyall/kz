@@ -26,7 +26,6 @@
             --glass-border: rgba(255, 255, 255, 0.1);
             --glass-blur: 20px;
             
-            /* ТЕПЕРЬ ВЕЗДЕ OSWALD */
             --font-head: 'Oswald', sans-serif;
             --font-body: 'Oswald', sans-serif;
             
@@ -41,12 +40,12 @@
         body {
             background-color: var(--bg-dark);
             color: var(--text-main);
-            font-family: var(--font-body); /* Применяем Oswald ко всему телу */
-            font-weight: 300; /* Для основного текста берем начертание тоньше, чтобы читалось легко */
+            font-family: var(--font-body);
+            font-weight: 300; 
             overflow-x: hidden;
             line-height: 1.6;
             position: relative;
-            letter-spacing: 0.5px; /* Чуть разредим буквы, так как Oswald узкий */
+            letter-spacing: 0.5px; 
         }
 
         /* --- 1. АНИМАЦИЯ СИЯНИЯ (PLASMA PULSE) --- */
@@ -280,7 +279,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 90px; /* Чуть увеличили высоту хедера */
+            height: 90px; 
             z-index: 1000;
             transition: var(--transition);
             display: flex;
@@ -294,7 +293,7 @@
             background: rgba(5, 6, 8, 0.95);
             backdrop-filter: blur(20px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            height: 80px; /* При скролле чуть компактнее */
+            height: 80px; 
         }
 
         .nav-container {
@@ -304,6 +303,7 @@
             width: 100%;
         }
 
+        /* --- LOGO --- */
         .logo {
             font-family: var(--font-head);
             font-size: 28px;
@@ -312,19 +312,19 @@
             letter-spacing: 2px;
             z-index: 1002;
             text-shadow: 0 0 20px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
         }
         .logo span { color: var(--accent-cyan); text-shadow: 0 0 15px var(--accent-cyan); }
 
-        /* --- 2. ОБНОВЛЕННОЕ МЕНЮ --- */
+        /* --- MENU STYLES --- */
         .nav-menu { 
             display: flex; 
-            gap: 40px; /* Увеличили отступ между разделами */
-            /* Стили рамки */
+            gap: 40px; 
             border: 1px solid rgba(0, 242, 255, 0.2);
             border-radius: 50px;
-            padding: 8px 40px; /* Чуть больше воздуха внутри рамки */
+            padding: 8px 40px; 
             background: rgba(20, 25, 40, 0.4);
-            /* Анимация рамки */
             animation: navBorderPulse 5s infinite ease-in-out;
         }
         
@@ -340,14 +340,12 @@
         }
 
         .nav-link {
-            font-size: 16px; /* Увеличили размер шрифта */
+            font-size: 16px;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
             position: relative;
             padding: 5px 0;
-            
-            /* Свечение текста в меню (медленное 8 сек) */
             animation: plasmaPulse 8s infinite ease-in-out;
             will-change: text-shadow, color;
         }
@@ -355,7 +353,7 @@
         .nav-link:hover { 
             color: white; 
             text-shadow: 0 0 20px rgba(255,255,255,1);
-            animation: none; /* При наведении делаем просто ярко белым */
+            animation: none; 
         }
 
         .mobile-toggle { display: none; color: white; font-size: 24px; cursor: pointer; z-index: 1002; }
@@ -437,6 +435,24 @@
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
+        }
+        
+        /* 3D LOGO IN ABOUT SECTION */
+        .about-logo-3d {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 20px; /* Скругленные углы для объема */
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.5), /* Глубокая тень */
+                0 0 30px rgba(0, 242, 255, 0.1); /* Легкое свечение */
+            transition: transform 0.5s;
+        }
+        .about-logo-3d:hover {
+            transform: scale(1.02);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.6),
+                0 0 40px rgba(0, 242, 255, 0.2);
         }
         
         .stats-grid {
@@ -859,12 +875,27 @@
         }
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            grid-template-columns: 1.5fr 1fr 1fr; /* Changed to 3 columns to balance better */
             gap: 40px;
             margin-bottom: 40px;
         }
         .footer-links li { margin-bottom: 12px; }
         
+        /* FOOTER LOGO IMAGE STYLE */
+        .footer-logo-img {
+            width: 140px; 
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+            opacity: 0.9;
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .footer-logo-img:hover {
+            opacity: 1;
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+        }
 
         /* --- MODAL (FORM) --- */
         .modal-overlay {
@@ -1031,7 +1062,9 @@
 
     <header class="header" id="header">
         <div class="container nav-container">
-            <a href="#home" class="logo scroll-trigger">SAFETY<span>ALL</span></a>
+            <a href="#home" class="logo scroll-trigger">
+                SAFETY<span>ALL</span>
+            </a>
             
             <nav>
                 <ul class="nav-menu" id="nav-menu">
@@ -1100,7 +1133,7 @@
                         </div>
                     </div>
                     <div style="display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-globe" style="font-size: 100px; color: var(--accent-cyan); opacity: 0.8; filter: drop-shadow(0 0 20px rgba(0,242,255,0.4));"></i>
+                        <img src="https://images.fillout.com/orgid-544431/flowpublicid-bkL8jQr3u4us/widgetid-meta-link-thumbnail/gQQX8rdS5GFMDmdbudTs5R/756d2146-533d-46b9-9d71-5123d701de08.jpg?a=tXHe5jztzvsufFhjNgSzZN" alt="SafetyAll Logo" class="about-logo-3d">
                     </div>
                 </div>
             </div>
@@ -1400,6 +1433,7 @@
                 <div>
                     <a href="#home" class="logo scroll-trigger">SAFETY<span>ALL</span></a>
                     <p style="color: #666; font-size: 14px; margin-top: 10px;">Профессиональное обучение по безопасности и охране труда.</p>
+                    <img src="https://images.fillout.com/orgid-544431/flowpublicid-bkL8jQr3u4us/widgetid-meta-link-thumbnail/gQQX8rdS5GFMDmdbudTs5R/756d2146-533d-46b9-9d71-5123d701de08.jpg?a=tXHe5jztzvsufFhjNgSzZN" alt="Logo" class="footer-logo-img">
                 </div>
                 <div>
                     <h5 style="color: white; margin-bottom: 20px;">Навигация</h5>
