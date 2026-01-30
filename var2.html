@@ -339,9 +339,9 @@
             }
         }
 
-        /* --- DROPDOWN & HOVER LOGIC (FERRARI EFFECT) --- */
+        /* --- DROPDOWN & HOVER LOGIC --- */
         .nav-item {
-            position: relative; /* Чтобы выпадающее меню позиционировалось относительно пункта */
+            position: relative; 
         }
 
         .nav-link {
@@ -350,7 +350,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             position: relative;
-            padding: 10px 0; /* Увеличим кликабельную зону */
+            padding: 10px 0; 
             animation: plasmaPulse 8s infinite ease-in-out;
             will-change: text-shadow, color;
             cursor: pointer;
@@ -363,13 +363,12 @@
             animation: none; 
         }
 
-        /* Само выпадающее меню */
         .dropdown-ferrari {
             position: absolute;
-            top: 100%; /* Сразу под ссылкой */
+            top: 100%; 
             left: 50%;
-            transform: translateX(-50%) translateY(20px) scaleY(0.8); /* Стартовая позиция */
-            width: 320px; /* Базовая ширина */
+            transform: translateX(-50%) translateY(20px) scaleY(0.8);
+            width: 320px; 
             background: rgba(10, 14, 23, 0.95);
             backdrop-filter: blur(20px);
             border: 1px solid var(--accent-cyan);
@@ -377,18 +376,13 @@
             border-radius: 12px;
             padding: 25px;
             z-index: 1100;
-            
-            /* Скрытие по умолчанию */
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-            
-            /* Анимация перехода */
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
             transform-origin: top center; 
         }
 
-        /* Треугольничек сверху */
         .dropdown-ferrari::before {
             content: '';
             position: absolute;
@@ -400,7 +394,6 @@
             border-bottom: 6px solid var(--accent-cyan);
         }
 
-        /* При наведении */
         .nav-item:hover .dropdown-ferrari {
             opacity: 1;
             visibility: visible;
@@ -424,7 +417,6 @@
             line-height: 1.5;
         }
 
-        /* Стили для списка в дропдауне (Курсы) */
         .dropdown-list {
             list-style: none;
             padding: 0;
@@ -439,7 +431,6 @@
         .dropdown-list li:last-child { border-bottom: none; }
         .dropdown-list i { margin-right: 8px; font-size: 12px; }
 
-        /* Стили для контактов в дропдауне */
         .dropdown-contact-row {
             display: flex;
             align-items: center;
@@ -498,19 +489,18 @@
             display: inline-block;
         }
 
+        /* --- MAIN TITLE GLOW EFFECT (6s duration) --- */
         .hero-big-brand {
             font-family: var(--font-head);
             font-size: clamp(40px, 10vw, 120px);
             font-weight: 700;
-            color: white;
+            color: #e0e0ff; /* Start color */
             line-height: 1.1;
             letter-spacing: 2px;
             margin: 10px 0 20px 0;
             text-transform: uppercase;
-            background: linear-gradient(180deg, #ffffff 20%, #8da4c7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: plasmaPulse 6s infinite ease-in-out;
+            will-change: text-shadow, color;
         }
 
         .hero-subtitle {
@@ -1300,8 +1290,15 @@
                             </div>
                         </div>
                     </div>
-                    <div style="display: flex; align-items: center; justify-content: center;">
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
                         <img src="https://images.fillout.com/orgid-544431/flowpublicid-bkL8jQr3u4us/widgetid-meta-link-thumbnail/gQQX8rdS5GFMDmdbudTs5R/756d2146-533d-46b9-9d71-5123d701de08.jpg?a=tXHe5jztzvsufFhjNgSzZN" alt="SafetyAll Logo" class="about-logo-3d">
+                        
+                        <div style="margin-top: 30px; border-top: 1px solid rgba(0, 242, 255, 0.3); padding-top: 20px; width: 80%;">
+                            <h4 style="font-size: 20px; color: var(--text-main); margin-bottom: 15px; letter-spacing: 1px;">АТТЕСТАТ ПРОМЫШЛЕННОЙ БЕЗОПАСНОСТИ</h4>
+                            <button class="btn btn-primary open-image-btn" data-image="https://images.fillout.com/orgid-544431/flowpublicid-utG18R2nnGus/widgetid-stzH/6MxQYt8BDQ16QqerEt8JRR/bre.png?a=5N42EQ2KyYRWNyZ6p8Kmeo">
+                                <i class="fas fa-eye" style="margin-right: 10px;"></i> Показать
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
