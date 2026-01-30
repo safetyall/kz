@@ -339,15 +339,22 @@
             }
         }
 
+        /* --- DROPDOWN & HOVER LOGIC (FERRARI EFFECT) --- */
+        .nav-item {
+            position: relative; /* Чтобы выпадающее меню позиционировалось относительно пункта */
+        }
+
         .nav-link {
             font-size: 16px;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 1px;
             position: relative;
-            padding: 5px 0;
+            padding: 10px 0; /* Увеличим кликабельную зону */
             animation: plasmaPulse 8s infinite ease-in-out;
             will-change: text-shadow, color;
+            cursor: pointer;
+            display: block;
         }
 
         .nav-link:hover { 
@@ -355,6 +362,97 @@
             text-shadow: 0 0 20px rgba(255,255,255,1);
             animation: none; 
         }
+
+        /* Само выпадающее меню */
+        .dropdown-ferrari {
+            position: absolute;
+            top: 100%; /* Сразу под ссылкой */
+            left: 50%;
+            transform: translateX(-50%) translateY(20px) scaleY(0.8); /* Стартовая позиция */
+            width: 320px; /* Базовая ширина */
+            background: rgba(10, 14, 23, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--accent-cyan);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.15);
+            border-radius: 12px;
+            padding: 25px;
+            z-index: 1100;
+            
+            /* Скрытие по умолчанию */
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            
+            /* Анимация перехода */
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            transform-origin: top center; 
+        }
+
+        /* Треугольничек сверху */
+        .dropdown-ferrari::before {
+            content: '';
+            position: absolute;
+            top: -6px; left: 50%;
+            transform: translateX(-50%);
+            width: 0; height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid var(--accent-cyan);
+        }
+
+        /* При наведении */
+        .nav-item:hover .dropdown-ferrari {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(10px) scaleY(1); 
+        }
+
+        .dropdown-title {
+            color: var(--accent-cyan);
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .dropdown-text {
+            color: #d1d5db;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Стили для списка в дропдауне (Курсы) */
+        .dropdown-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .dropdown-list li {
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 14px;
+            color: #e0e0ff;
+        }
+        .dropdown-list li:last-child { border-bottom: none; }
+        .dropdown-list i { margin-right: 8px; font-size: 12px; }
+
+        /* Стили для контактов в дропдауне */
+        .dropdown-contact-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #e0e0ff;
+        }
+        .dropdown-contact-row i {
+            width: 20px;
+            margin-right: 10px;
+            text-align: center;
+        }
+
 
         .mobile-toggle { display: none; color: white; font-size: 24px; cursor: pointer; z-index: 1002; }
 
@@ -1018,6 +1116,9 @@
             .nav-menu.active { right: 0; }
             .nav-link { font-size: 20px; margin-bottom: 20px; display: block;}
             .mobile-toggle { display: block; }
+            
+            /* Скрываем hover эффект на мобильных, чтобы не мешал тачу */
+            .nav-item:hover .dropdown-ferrari { opacity: 0; visibility: hidden; }
         }
     </style>
 </head>
@@ -1068,13 +1169,80 @@
             
             <nav>
                 <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#about" class="nav-link scroll-trigger">О компании</a></li>
-                    <li><a href="#importance" class="nav-link scroll-trigger">5 причин сотрудничать с нами</a></li>
-                    <li><a href="#advantages" class="nav-link scroll-trigger">Преимущества</a></li>
-                    <li><a href="#courses" class="nav-link scroll-trigger">Курсы</a></li>
-                    <li><a href="#process" class="nav-link scroll-trigger">Обучение</a></li>
-                    <li><a href="#documents" class="nav-link scroll-trigger">Документы</a></li>
-                    <li><a href="#contacts" class="nav-link scroll-trigger">Контакты</a></li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link scroll-trigger">О компании</a>
+                        <div class="dropdown-ferrari">
+                            <div class="dropdown-title">ТОО "SafetyAll"</div>
+                            <p class="dropdown-text">
+                                Более 20 лет практического опыта в сфере безопасности и охраны труда. Мы объединяем экспертные знания с передовыми IT-технологиями для качественного дистанционного обучения.
+                            </p>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="#importance" class="nav-link scroll-trigger">5 причин сотрудничать с нами</a>
+                        <div class="dropdown-ferrari">
+                            <div class="dropdown-title">Почему мы?</div>
+                            <p class="dropdown-text">
+                                Централизация процессов, гарантия юридической чистоты, доступная ценовая политика, профессиональный подход и экономия ваших ресурсов.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#advantages" class="nav-link scroll-trigger">Преимущества</a>
+                        <div class="dropdown-ferrari">
+                            <div class="dropdown-title">Технологии</div>
+                            <p class="dropdown-text">
+                                Обучение на двух языках, умный ИИ-помощник, полная адаптация под мобильные устройства и мгновенная отправка документов.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#courses" class="nav-link scroll-trigger">Курсы</a>
+                        <div class="dropdown-ferrari">
+                            <div class="dropdown-title">Направления</div>
+                            <ul class="dropdown-list">
+                                <li><i class="fas fa-check text-cyan"></i> Безопасность и охрана труда</li>
+                                <li><i class="fas fa-check text-cyan"></i> Промышленная безопасность</li>
+                                <li><i class="fas fa-check text-cyan"></i> Пожарно-технический минимум</li>
+                                <li><i class="fas fa-check text-cyan"></i> Электробезопасность</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#process" class="nav-link scroll-trigger">Обучение</a>
+                        <div class="dropdown-ferrari">
+                            <div class="dropdown-title">Процесс</div>
+                            <p class="dropdown-text">
+                                Полностью дистанционно. От подачи заявки до получения сертификата — всё онлайн, без отрыва от производства и лишней бюрократии.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#documents" class="nav-link scroll-trigger">Документы</a>
+                        <div class="dropdown-ferrari">
+                            <div class="dropdown-title">Результат</div>
+                            <p class="dropdown-text">
+                                Вы получаете легитимные удостоверения и протоколы проверки знаний установленного образца. Оригиналы доставляем курьером или почтой.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#contacts" class="nav-link scroll-trigger">Контакты</a>
+                        <div class="dropdown-ferrari" style="width: 350px;">
+                            <div class="dropdown-title">Связь</div>
+                            <div class="dropdown-contact-row"><i class="fas fa-phone text-cyan"></i> +7-701-716-1721</div>
+                            <div class="dropdown-contact-row"><i class="fas fa-phone text-cyan"></i> +7-747-480-2877</div>
+                            <div class="dropdown-contact-row"><i class="fas fa-envelope text-cyan"></i> ritm_asia@mail.ru</div>
+                            <div class="dropdown-contact-row"><i class="fas fa-map-marker-alt text-cyan"></i> г. Алматы, мкн "Мамыр", б-р Садовый, д. 3, оф. 1</div>
+                        </div>
+                    </li>
+
                     <li style="margin-top: 20px; display: none;" class="mobile-cta-btn"><button class="btn btn-primary open-modal-btn">Начать обучение</button></li>
                 </ul>
             </nav>
@@ -1588,6 +1756,11 @@
         // --- 2. SCROLL LOGIC ---
         document.querySelectorAll('.scroll-trigger').forEach(link => {
             link.addEventListener('click', function(e) {
+                // Если у ссылки есть выпадающее меню, и мы на мобильном - не скроллим
+                if (this.nextElementSibling && this.nextElementSibling.classList.contains('dropdown-ferrari') && window.innerWidth <= 992) {
+                    return;
+                }
+
                 e.preventDefault(); 
                 const href = this.getAttribute('href');
                 if(href === "#") return; 
