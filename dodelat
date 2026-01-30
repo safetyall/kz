@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -25,8 +25,11 @@
             --glass-bg: rgba(20, 25, 40, 0.6);
             --glass-border: rgba(255, 255, 255, 0.1);
             --glass-blur: 20px;
+            
+            /* ТЕПЕРЬ ВЕЗДЕ OSWALD */
             --font-head: 'Oswald', sans-serif;
-            --font-body: 'Manrope', sans-serif;
+            --font-body: 'Oswald', sans-serif;
+            
             --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             --header-height: 80px;
         }
@@ -38,13 +41,57 @@
         body {
             background-color: var(--bg-dark);
             color: var(--text-main);
-            font-family: var(--font-body);
+            font-family: var(--font-body); /* Применяем Oswald ко всему телу */
+            font-weight: 300; /* Для основного текста берем начертание тоньше, чтобы читалось легко */
             overflow-x: hidden;
             line-height: 1.6;
             position: relative;
+            letter-spacing: 0.5px; /* Чуть разредим буквы, так как Oswald узкий */
         }
 
-        /* --- PRELOADER STYLES --- */
+        /* --- 1. АНИМАЦИЯ СИЯНИЯ (PLASMA PULSE) --- */
+        @keyframes plasmaPulse {
+            0%, 100% {
+                text-shadow: 
+                    0 0 5px rgba(140, 100, 255, 0.6), 
+                    0 0 15px rgba(140, 100, 255, 0.3);
+                color: #e0e0ff;
+            }
+            50% {
+                text-shadow: 
+                    0 0 5px rgba(255, 255, 255, 0.9),
+                    0 0 20px rgba(140, 100, 255, 0.8),
+                    0 0 40px rgba(0, 194, 255, 0.5);
+                color: #ffffff;
+            }
+        }
+
+        /* Заголовки H2 */
+        h2, .section-title {
+            font-family: var(--font-head);
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3.5rem); 
+            margin-bottom: 3rem;
+            padding: 0 10px;
+            animation: plasmaPulse 4s infinite ease-in-out;
+            will-change: text-shadow, color;
+        }
+        
+        h2 span, .section-title span {
+            animation: plasmaPulse 4s infinite ease-in-out;
+            color: inherit !important;
+        }
+
+        .adv-title, .module-title {
+            animation: plasmaPulse 4s infinite ease-in-out;
+            will-change: text-shadow, color;
+            color: #e0e0ff; 
+        }
+
+        /* --- PRELOADER --- */
         #preloader {
             position: fixed;
             top: 0; left: 0;
@@ -152,14 +199,14 @@
             100% { transform: perspective(500px) rotateX(60deg) translateY(40px); }
         }
 
-        h1, h2, h3, h4, h5, h6 { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.5px; }
+        h1, h3, h4, h5, h6 { font-family: var(--font-head); text-transform: uppercase; letter-spacing: 0.5px; }
         
         a { text-decoration: none; color: inherit; transition: var(--transition); cursor: pointer; }
         a:hover { color: var(--accent-cyan); }
         ul { list-style: none; }
 
         /* --- UTILITIES --- */
-        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
         
         .glass-panel {
             background: var(--glass-bg);
@@ -233,7 +280,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: var(--header-height);
+            height: 90px; /* Чуть увеличили высоту хедера */
             z-index: 1000;
             transition: var(--transition);
             display: flex;
@@ -247,6 +294,7 @@
             background: rgba(5, 6, 8, 0.95);
             backdrop-filter: blur(20px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            height: 80px; /* При скролле чуть компактнее */
         }
 
         .nav-container {
@@ -258,7 +306,7 @@
 
         .logo {
             font-family: var(--font-head);
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 700;
             color: white;
             letter-spacing: 2px;
@@ -267,19 +315,48 @@
         }
         .logo span { color: var(--accent-cyan); text-shadow: 0 0 15px var(--accent-cyan); }
 
-        .nav-menu { display: flex; gap: 30px; }
+        /* --- 2. ОБНОВЛЕННОЕ МЕНЮ --- */
+        .nav-menu { 
+            display: flex; 
+            gap: 40px; /* Увеличили отступ между разделами */
+            /* Стили рамки */
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            border-radius: 50px;
+            padding: 8px 40px; /* Чуть больше воздуха внутри рамки */
+            background: rgba(20, 25, 40, 0.4);
+            /* Анимация рамки */
+            animation: navBorderPulse 5s infinite ease-in-out;
+        }
         
-        .nav-link {
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--text-muted);
-            position: relative;
-            padding: 10px 0;
+        @keyframes navBorderPulse {
+            0%, 100% {
+                border-color: rgba(0, 242, 255, 0.1);
+                box-shadow: 0 0 5px rgba(0, 242, 255, 0.05);
+            }
+            50% {
+                border-color: rgba(0, 242, 255, 0.6);
+                box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+            }
         }
 
-        .nav-link.active, .nav-link:hover { color: white; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+        .nav-link {
+            font-size: 16px; /* Увеличили размер шрифта */
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 5px 0;
+            
+            /* Свечение текста в меню (медленное 8 сек) */
+            animation: plasmaPulse 8s infinite ease-in-out;
+            will-change: text-shadow, color;
+        }
+
+        .nav-link:hover { 
+            color: white; 
+            text-shadow: 0 0 20px rgba(255,255,255,1);
+            animation: none; /* При наведении делаем просто ярко белым */
+        }
 
         .mobile-toggle { display: none; color: white; font-size: 24px; cursor: pointer; z-index: 1002; }
 
@@ -353,14 +430,7 @@
 
 
         /* --- SECTIONS COMMON --- */
-        .section-title {
-            font-size: 40px;
-            margin-bottom: 20px;
-            text-align: center;
-            line-height: 1.2;
-        }
-        .section-title span { color: var(--accent-cyan); text-shadow: 0 0 15px rgba(0,242,255,0.3); }
-
+        
         /* --- ABOUT --- */
         .about-grid {
             display: grid;
@@ -519,7 +589,7 @@
         .adv-title {
             font-family: var(--font-head);
             font-size: 24px;
-            color: white;
+            /* Color and animation handled by plasmaPulse rules above */
             margin-bottom: 15px;
             text-transform: uppercase;
         }
@@ -604,7 +674,7 @@
         .module-title {
             font-family: var(--font-head);
             font-size: 20px;
-            color: white;
+            /* Color and animation handled by plasmaPulse rules above */
             text-transform: uppercase;
             margin-bottom: 15px;
             line-height: 1.3;
@@ -830,7 +900,7 @@
             overflow-y: auto; 
         }
 
-        /* --- IMAGE MODAL STYLE (NEW) --- */
+        /* --- IMAGE MODAL STYLE --- */
         .image-window {
             background: transparent;
             border: none;
@@ -883,6 +953,9 @@
 
         /* --- RESPONSIVE --- */
         @media (max-width: 992px) {
+            /* Сбрасываем рамку меню для мобильных */
+            .nav-menu { border: none; background: transparent; animation: none; padding: 0; gap: 0; }
+
             .hero-capsule { padding: 40px 20px; }
             .hero-title { font-size: 36px; }
             .hero-btns { justify-content: center; }
@@ -1011,7 +1084,7 @@
             <div class="glass-panel" style="padding: 60px;">
                 <div class="about-grid">
                     <div>
-                        <h2 style="margin-bottom: 20px; font-size: 32px;">НАДЕЖНЫЙ ПАРТНЕР <span class="text-cyan">ДЛЯ БИЗНЕСА</span></h2>
+                        <h2 style="margin-bottom: 20px;">НАДЕЖНЫЙ ПАРТНЕР <span class="text-cyan">ДЛЯ БИЗНЕСА</span></h2>
                         <p style="color: var(--text-muted); margin-bottom: 30px;">
                             ТОО «SafetyALL» - более 20 лет практического опыта в области безопасности и охраны труда, пожарной, промышленнной и электробезопасности. Мы специализируемся на дистанционном обучении рабочих и ИТР.
                         </p>
@@ -1283,7 +1356,7 @@
 
     <section class="section-padding" style="text-align: center; position: relative;">
         <div class="container">
-            <h2 style="font-size: 48px; margin-bottom: 20px;">ГОТОВЫ НАЧАТЬ?</h2>
+            <h2 style="margin-bottom: 20px;">ГОТОВЫ НАЧАТЬ?</h2>
             <button class="btn btn-primary open-modal-btn" style="transform: scale(1.1);">Начать обучение</button>
         </div>
     </section>
