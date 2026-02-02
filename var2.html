@@ -296,11 +296,14 @@
             height: 80px; 
         }
 
+        /* --- ОБНОВЛЕННЫЙ NAV CONTAINER (БЕЗ ОГРАНИЧЕНИЯ ШИРИНЫ) --- */
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
+            max-width: 100%; /* На всю ширину */
+            padding: 0 40px; /* Отступы от краев */
         }
 
         /* --- LOGO --- */
@@ -1109,6 +1112,9 @@
             
             /* Скрываем hover эффект на мобильных, чтобы не мешал тачу */
             .nav-item:hover .dropdown-ferrari { opacity: 0; visibility: hidden; }
+            
+            /* На мобильных немного уменьшим паддинг шапки */
+            .nav-container { padding: 0 20px; }
         }
     </style>
 </head>
@@ -1152,7 +1158,7 @@
     </div>
 
     <header class="header" id="header">
-        <div class="container nav-container">
+        <div class="nav-container">
             <a href="#home" class="logo scroll-trigger">
                 SAFETY<span>ALL</span>
             </a>
@@ -1430,7 +1436,7 @@
                     </div>
                     <h3 class="module-title">Безопасность и<br>охрана труда</h3>
                     <p class="module-desc">Базовые нормы и правила безопасности для всех категорий сотрудников.</p>
-                    <button class="module-btn open-image-btn" data-image="https://images.fillout.com/orgid-544431/flowpublicid-utG18R2nnGus/widgetid-jpeQ/2R7u4c63qjYcV9sKRDeE9t/unnamed-(1).png?a=9i5RdySJsVHJGQktKq1CUY">Подробнее</button>
+                    <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1J-jjOtExhCgh3GqXI50R7HcWEMmwiU4T/preview">Подробнее</button>
                 </div>
 
                 <div class="course-module">
@@ -1440,7 +1446,7 @@
                     </div>
                     <h3 class="module-title">Промышленная<br>безопасность</h3>
                     <p class="module-desc">Требования безопасности к опасным устройствам и на опасных производственных объектах.</p>
-                     <button class="module-btn open-image-btn" data-image="https://images.fillout.com/orgid-544431/flowpublicid-utG18R2nnGus/widgetid-jpeQ/2R7u4c63qjYcV9sKRDeE9t/unnamed-(1).png?a=9i5RdySJsVHJGQktKq1CUY">Подробнее</button>
+                     <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1Fx2fJ3AdBvTC2fYNVKjK8bZWDEsQlclv/preview">Подробнее</button>
                 </div>
 
                 <div class="course-module">
@@ -1450,7 +1456,7 @@
                     </div>
                     <h3 class="module-title">Пожарно-технический<br>минимум</h3>
                     <p class="module-desc">Профилактика возгораний и порядок действий при ЧС.</p>
-                     <button class="module-btn open-image-btn" data-image="https://images.fillout.com/orgid-544431/flowpublicid-utG18R2nnGus/widgetid-jpeQ/2R7u4c63qjYcV9sKRDeE9t/unnamed-(1).png?a=9i5RdySJsVHJGQktKq1CUY">Подробнее</button>
+                     <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1J-jjOtExhCgh3GqXI50R7HcWEMmwiU4T/preview">Подробнее</button>
                 </div>
 
                 <div class="course-module">
@@ -1460,7 +1466,17 @@
                     </div>
                     <h3 class="module-title">Электробезопасность</h3>
                     <p class="module-desc">Безопасная работа с электроустановками и получение группы допуска.</p>
-                     <button class="module-btn open-image-btn" data-image="https://images.fillout.com/orgid-544431/flowpublicid-utG18R2nnGus/widgetid-jpeQ/2R7u4c63qjYcV9sKRDeE9t/unnamed-(1).png?a=9i5RdySJsVHJGQktKq1CUY">Подробнее</button>
+                     <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1J_uKX8b5i9Nyp8eoG8Sq6JJaXgXCowh2/preview">Подробнее</button>
+                </div>
+
+                <div class="course-module">
+                    <div class="module-icon-zone">
+                        <i class="fas fa-building module-icon"></i>
+                        <div class="module-indicator"></div>
+                    </div>
+                    <h3 class="module-title">Работы на<br>высоте</h3>
+                    <p class="module-desc">Требования безопасности при организации и проведении работ на высоте, применение систем спасения.</p>
+                     <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1J-jjOtExhCgh3GqXI50R7HcWEMmwiU4T/preview">Подробнее</button>
                 </div>
 
             </div>
@@ -1835,7 +1851,7 @@
             if (e.target === modal) closeModal();
         });
 
-        // --- 6. VIDEO MODAL LOGIC ---
+        // --- 6. VIDEO MODAL LOGIC (UPDATED) ---
         const videoModal = document.getElementById('video-modal');
         
         // Buttons
@@ -1845,18 +1861,36 @@
         const closeVideoBtn = document.getElementById('close-video-btn');
         const videoFrame = document.getElementById('training-video');
         
-        // Same video source for both
-        const videoSrc = "https://drive.google.com/file/d/1IkE_xSs4HJyKseR1KXnuUzM9_G_EDpCI/preview";
+        // Link for "Как пользоваться обучением ИИ" (оставил прежнюю, так как вы не прислали новую)
+        const videoSrc1 = "https://drive.google.com/file/d/1GSqcGR0vU0yAMkv-ab--3RFdDTZ3HJ5I/preview";
+        
+        // Link for "О платформе обучения" (Ваша новая ссылка)
+        const videoSrc2 = "https://drive.google.com/file/d/1xImFt6LqfxcEju5IXI-76TJpeCZO-28w/preview";
 
-        const openVideoModal = (e) => {
+        const openVideoModal = (e, src) => {
             e.preventDefault();
-            videoFrame.src = videoSrc; 
+            videoFrame.src = src; 
             videoModal.classList.add('active');
             document.body.style.overflow = 'hidden';
         };
 
-        if(openVideoBtn1) openVideoBtn1.addEventListener('click', openVideoModal);
-        if(openVideoBtn2) openVideoBtn2.addEventListener('click', openVideoModal);
+        if(openVideoBtn1) {
+            openVideoBtn1.addEventListener('click', (e) => openVideoModal(e, videoSrc1));
+        }
+        if(openVideoBtn2) {
+            openVideoBtn2.addEventListener('click', (e) => openVideoModal(e, videoSrc2));
+        }
+
+        // --- NEW LOGIC FOR COURSE VIDEOS ---
+        // Select all course buttons
+        const courseVideoBtns = document.querySelectorAll('.course-video-btn');
+        courseVideoBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const src = btn.getAttribute('data-video-src');
+                openVideoModal(e, src);
+            });
+        });
+
 
         const closeVideo = () => {
             videoModal.classList.remove('active');
