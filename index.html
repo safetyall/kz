@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="kk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAFETYALL | Центр профессионального обучения</title>
+    <title>SAFETYALL | Кәсіби оқыту орталығы</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,72 +88,6 @@
             animation: plasmaPulse 4s infinite ease-in-out;
             will-change: text-shadow, color;
             color: #e0e0ff; 
-        }
-
-        /* --- PRELOADER --- */
-        #preloader {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: #020203;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-family: var(--font-head);
-        }
-
-        .loader-ring {
-            width: 80px; height: 80px;
-            border: 2px solid rgba(0, 242, 255, 0.1);
-            border-top: 3px solid var(--accent-cyan);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 30px;
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .loader-text {
-            font-size: 18px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            color: var(--text-main);
-            min-height: 27px;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .loader-percent {
-            font-size: 40px;
-            font-weight: 700;
-            color: var(--accent-cyan);
-            margin-bottom: 20px;
-            text-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
-        }
-
-        .loader-bar-bg {
-            width: 300px;
-            height: 4px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 2px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .loader-bar-fill {
-            height: 100%;
-            width: 0%;
-            background: var(--accent-cyan);
-            box-shadow: 0 0 10px var(--accent-cyan);
-            border-radius: 2px;
         }
 
         /* --- GLOBAL ANIMATED BACKGROUND --- */
@@ -296,14 +230,14 @@
             height: 80px; 
         }
 
-        /* --- ОБНОВЛЕННЫЙ NAV CONTAINER (БЕЗ ОГРАНИЧЕНИЯ ШИРИНЫ) --- */
+        /* --- NAV CONTAINER --- */
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            max-width: 100%; /* На всю ширину */
-            padding: 0 40px; /* Отступы от краев */
+            max-width: 100%; 
+            padding: 0 40px; 
         }
 
         /* --- LOGO --- */
@@ -1120,15 +1054,6 @@
 </head>
 <body>
 
-    <div id="preloader">
-        <div class="loader-ring"></div>
-        <div class="loader-percent" id="loader-percent">0%</div>
-        <div class="loader-text" id="loader-text">Загрузка сайта...</div>
-        <div class="loader-bar-bg">
-            <div class="loader-bar-fill" id="loader-bar-fill"></div>
-        </div>
-    </div>
-
     <canvas id="particles-canvas"></canvas>
     <div class="hero-grid"></div>
     <div class="hero-glow"></div>
@@ -1166,85 +1091,85 @@
             <nav>
                 <ul class="nav-menu" id="nav-menu">
                     <li class="nav-item">
-                        <a href="#about" class="nav-link scroll-trigger">О компании</a>
+                        <a href="#about" class="nav-link scroll-trigger">Компания туралы</a>
                         <div class="dropdown-ferrari">
                             <div class="dropdown-title">ТОО "SafetyAll"</div>
                             <p class="dropdown-text">
-                                Более 20 лет практического опыта в сфере безопасности и охраны труда. Мы объединяем экспертные знания с передовыми IT-технологиями для качественного дистанционного обучения.
+                                Қауіпсіздік және еңбекті қорғау саласында 20 жылдан астам тәжірибе. Біз сапалы қашықтан оқыту үшін сараптамалық білімді озық IT-технологиялармен біріктіреміз.
                             </p>
                         </div>
                     </li>
                     
                     <li class="nav-item">
-                        <a href="#importance" class="nav-link scroll-trigger">5 причин сотрудничать с нами</a>
+                        <a href="#importance" class="nav-link scroll-trigger">Бізбен жұмыс істеудің 5 себебі</a>
                         <div class="dropdown-ferrari">
-                            <div class="dropdown-title">Почему мы?</div>
+                            <div class="dropdown-title">Неге біз?</div>
                             <p class="dropdown-text">
-                                Централизация процессов, гарантия юридической чистоты, доступная ценовая политика, профессиональный подход и экономия ваших ресурсов.
+                                Процестерді орталықтандыру, заңды тазалық кепілдігі, қолжетімді баға саясаты, кәсіби тәсіл және ресурстарыңызды үнемдеу.
                             </p>
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#advantages" class="nav-link scroll-trigger">Преимущества</a>
+                        <a href="#advantages" class="nav-link scroll-trigger">Артықшылықтар</a>
                         <div class="dropdown-ferrari">
-                            <div class="dropdown-title">Технологии</div>
+                            <div class="dropdown-title">Технологиялар</div>
                             <p class="dropdown-text">
-                                Обучение на двух языках, умный ИИ-помощник, полная адаптация под мобильные устройства и мгновенная отправка документов.
+                                Екі тілде оқыту, ақылды ИИ-көмекші, мобильді құрылғыларға толық бейімделу және құжаттарды лезде жіберу.
                             </p>
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#courses" class="nav-link scroll-trigger">Курсы</a>
+                        <a href="#courses" class="nav-link scroll-trigger">Курстар</a>
                         <div class="dropdown-ferrari">
-                            <div class="dropdown-title">Направления</div>
+                            <div class="dropdown-title">Бағыттар</div>
                             <ul class="dropdown-list">
-                                <li><i class="fas fa-check text-cyan"></i> Безопасность и охрана труда</li>
-                                <li><i class="fas fa-check text-cyan"></i> Промышленная безопасность</li>
-                                <li><i class="fas fa-check text-cyan"></i> Пожарно-технический минимум</li>
-                                <li><i class="fas fa-check text-cyan"></i> Электробезопасность</li>
+                                <li><i class="fas fa-check text-cyan"></i> Еңбек қауіпсіздігі және еңбекті қорғау</li>
+                                <li><i class="fas fa-check text-cyan"></i> Өнеркәсіптік қауіпсіздік</li>
+                                <li><i class="fas fa-check text-cyan"></i> Өрт-техникалық минимум</li>
+                                <li><i class="fas fa-check text-cyan"></i> Электр қауіпсіздігі</li>
                             </ul>
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#process" class="nav-link scroll-trigger">Обучение</a>
+                        <a href="#process" class="nav-link scroll-trigger">Оқу процесі</a>
                         <div class="dropdown-ferrari">
                             <div class="dropdown-title">Процесс</div>
                             <p class="dropdown-text">
-                                Полностью дистанционно. От подачи заявки до получения сертификата — всё онлайн, без отрыва от производства и лишней бюрократии.
+                                Толығымен қашықтан. Өтінім беруден бастап сертификат алғанға дейін — барлығы онлайн, өндірістен қол үзбей және артық бюрократиясыз.
                             </p>
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#documents" class="nav-link scroll-trigger">Документы</a>
+                        <a href="#documents" class="nav-link scroll-trigger">Құжаттар</a>
                         <div class="dropdown-ferrari">
-                            <div class="dropdown-title">Результат</div>
+                            <div class="dropdown-title">Нәтиже</div>
                             <p class="dropdown-text">
-                                Вы получаете легитимные удостоверения и протоколы проверки знаний установленного образца. Оригиналы доставляем курьером или почтой.
+                                Сіз белгіленген үлгідегі заңды куәліктер мен білімді тексеру хаттамаларын аласыз. Түпнұсқаларды курьермен немесе пошта арқылы жеткіземіз.
                             </p>
                         </div>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#contacts" class="nav-link scroll-trigger">Контакты</a>
+                        <a href="#contacts" class="nav-link scroll-trigger">Байланыс</a>
                         <div class="dropdown-ferrari" style="width: 350px;">
-                            <div class="dropdown-title">Связь</div>
+                            <div class="dropdown-title">Байланыс</div>
                             <div class="dropdown-contact-row"><i class="fas fa-phone text-cyan"></i> +7-701-716-1721</div>
                             <div class="dropdown-contact-row"><i class="fas fa-phone text-cyan"></i> +7-747-480-2877</div>
                             <div class="dropdown-contact-row"><i class="fas fa-envelope text-cyan"></i> ritm_asia@mail.ru</div>
-                            <div class="dropdown-contact-row"><i class="fas fa-map-marker-alt text-cyan"></i> г. Алматы, мкн "Мамыр", б-р Садовый, д. 3, оф. 1</div>
+                            <div class="dropdown-contact-row"><i class="fas fa-map-marker-alt text-cyan"></i> Алматы қ., "Мамыр" ш/а, Садовый гүлзары, 3 үй, 1 кеңсе</div>
                         </div>
                     </li>
 
-                    <li style="margin-top: 20px; display: none;" class="mobile-cta-btn"><button class="btn btn-primary open-modal-btn">Начать обучение</button></li>
+                    <li style="margin-top: 20px; display: none;" class="mobile-cta-btn"><button class="btn btn-primary open-modal-btn">Оқуды бастау</button></li>
                 </ul>
             </nav>
 
             <div style="display: flex; gap: 15px; align-items: center;">
-                <button class="btn btn-primary open-modal-btn desktop-cta" style="display: none; @media(min-width: 993px){display: flex;}">Начать обучение</button>
+                <button class="btn btn-primary open-modal-btn desktop-cta" style="display: none; @media(min-width: 993px){display: flex;}">Оқуды бастау</button>
                 <div class="mobile-toggle" id="mobile-toggle">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -1256,8 +1181,8 @@
         <div class="hero-modern-card">
             
             <div class="hero-pre-title gsap-hero-reveal">
-                ПРОФЕССИОНАЛЬНОЕ ОБУЧЕНИЕ<br>
-                ПО БЕЗОПАСНОСТИ И ОХРАНЕ ТРУДА
+                ЕҢБЕК ҚАУІПСІЗДІГІ ЖӘНЕ<br>
+                ЕҢБЕКТІ ҚОРҒАУ БОЙЫНША КӘСІБИ ОҚЫТУ
             </div>
             
             <h1 class="hero-big-brand gsap-hero-reveal">
@@ -1265,13 +1190,13 @@
             </h1>
             
             <p class="hero-subtitle gsap-hero-reveal">
-                Уникальная образовательная платформа в Казахстане с использованием искусственного интеллекта.<br>
-                Программы соответствуют законодательству РК.
+                Жасанды интеллектті қолданатын Қазақстандағы бірегей білім беру платформасы.<br>
+                Бағдарламалар ҚР заңнамасына сәйкес келеді.
             </p>
             
             <div class="hero-btns gsap-hero-reveal">
-                <button class="btn btn-primary open-modal-btn">Начать обучение</button>
-                <a href="#courses" class="btn btn-secondary scroll-trigger">Посмотреть курсы</a>
+                <button class="btn btn-primary open-modal-btn">Оқуды бастау</button>
+                <a href="#courses" class="btn btn-secondary scroll-trigger">Курстарды көру</a>
             </div>
         </div>
     </section>
@@ -1281,18 +1206,18 @@
             <div class="glass-panel" style="padding: 60px;">
                 <div class="about-grid">
                     <div>
-                        <h2 style="margin-bottom: 20px;">НАДЕЖНЫЙ ПАРТНЕР <span class="text-cyan">ДЛЯ БИЗНЕСА</span></h2>
+                        <h2 style="margin-bottom: 20px;">БИЗНЕС ҮШІН <span class="text-cyan">СЕНІМДІ СЕРІКТЕС</span></h2>
                         <p style="color: var(--text-muted); margin-bottom: 30px;">
-                            ТОО «SafetyALL» - более 20 лет практического опыта в области безопасности и охраны труда, пожарной, промышленнной и электробезопасности. Мы специализируемся на дистанционном обучении рабочих и ИТР.
+                            ТОО «SafetyALL» - қауіпсіздік және еңбекті қорғау, өрт, өнеркәсіптік және электр қауіпсіздігі саласында 20 жылдан астам тәжірибесі бар. Біз жұмысшылар мен ИТҚ мамандарын қашықтан оқытуға маманданғанбыз.
                         </p>
                         <div class="stats-grid">
                             <div class="stat-card">
                                 <span class="stat-num">20+</span>
-                                <span class="stat-desc">Лет опыта</span>
+                                <span class="stat-desc">Жыл тәжірибе</span>
                             </div>
                             <div class="stat-card">
                                 <span class="stat-num">100%</span>
-                                <span class="stat-desc">Дистанционно</span>
+                                <span class="stat-desc">Қашықтан</span>
                             </div>
                         </div>
                     </div>
@@ -1300,9 +1225,9 @@
                         <img src="https://images.fillout.com/orgid-544431/flowpublicid-bkL8jQr3u4us/widgetid-meta-link-thumbnail/gQQX8rdS5GFMDmdbudTs5R/756d2146-533d-46b9-9d71-5123d701de08.jpg?a=tXHe5jztzvsufFhjNgSzZN" alt="SafetyAll Logo" class="about-logo-3d">
                         
                         <div style="margin-top: 30px; border-top: 1px solid rgba(0, 242, 255, 0.3); padding-top: 20px; width: 80%;">
-                            <h4 style="font-size: 20px; color: var(--text-main); margin-bottom: 15px; letter-spacing: 1px;">АТТЕСТАТ ПРОМЫШЛЕННОЙ БЕЗОПАСНОСТИ</h4>
+                            <h4 style="font-size: 20px; color: var(--text-main); margin-bottom: 15px; letter-spacing: 1px;">ӨНЕРКӘСІПТІК ҚАУІПСІЗДІК АТТЕСТАТЫ</h4>
                             <button class="btn btn-primary open-image-btn" data-image="https://images.fillout.com/orgid-544431/flowpublicid-utG18R2nnGus/widgetid-stzH/6MxQYt8BDQ16QqerEt8JRR/bre.png?a=5N42EQ2KyYRWNyZ6p8Kmeo">
-                                <i class="fas fa-eye" style="margin-right: 10px;"></i> Показать
+                                <i class="fas fa-eye" style="margin-right: 10px;"></i> Көрсету
                             </button>
                         </div>
                     </div>
@@ -1314,44 +1239,44 @@
     <section class="section-padding" id="importance">
         <div class="container">
             <div class="reasons-header">
-                <h2 class="section-title">5 причин сотрудничать с нами</h2>
-                <p class="reasons-subheader">Комплексный подход. Ответственность. Предсказуемый результат.</p>
+                <h2 class="section-title">Бізбен жұмыс істеудің 5 себебі</h2>
+                <p class="reasons-subheader">Кешенді тәсіл. Жауапкершілік. Болжамды нәтиже.</p>
             </div>
 
             <div class="reasons-grid">
                 <div class="reason-card">
                     <i class="fas fa-cubes reason-icon"></i>
-                    <h3 class="reason-title">1. Централизация бизнес-процессов</h3>
-                    <p class="reason-desc">Мы реализуем свою деятельность по принципу «чем проще – тем лучше». Автоматизация процессов на нашей онлайн-платформе и отсутствие «бюрократических проволочек» обеспечивают консолидацию всех этапов работ, исключая необходимость в заполнения заявок на бумажном носителе.</p>
+                    <h3 class="reason-title">1. Бизнес-процестерді орталықтандыру</h3>
+                    <p class="reason-desc">Біз өз қызметімізді «неғұрлым қарапайым болса – соғұрлым жақсы» қағидаты бойынша жүзеге асырамыз. Біздің онлайн-платформадағы процестерді автоматтандыру және «бюрократиялық кідірістердің» болмауы жұмыстың барлық кезеңдерін біріктіруді қамтамасыз етеді, қағаз жүзіндегі өтінімдерді толтыру қажеттілігін жояды.</p>
                 </div>
 
                 <div class="reason-card">
                     <i class="fas fa-clock reason-icon"></i>
-                    <h3 class="reason-title">2. Исполнение обязательств</h3>
-                    <p class="reason-desc">Сотрудничество строится на строгом соблюдении регламентов и сроков, зафиксированных в договоре. Такой подход нивелирует юридические и операционные риски во взаимодействии с  контрагентами.</p>
+                    <h3 class="reason-title">2. Міндеттемелерді орындау</h3>
+                    <p class="reason-desc">Ынтымақтастық шартта бекітілген регламенттер мен мерзімдерді қатаң сақтауға негізделген. Мұндай тәсіл контрагенттермен өзара іс-қимылдағы заңдық және операциялық тәуекелдерді жояды.</p>
                 </div>
 
                 <div class="reason-card">
                     <i class="fas fa-balance-scale reason-icon"></i>
-                    <h3 class="reason-title">3. ДОСТУПНАЯ ЦЕНОВАЯ ПОЛИТИКА</h3>
-                    <p class="reason-desc">Структура стоимости наших услуг формируется на основе объективных рыночных индикаторов и качественных показателей. Мы – клиенториентированная компания и гарантируем полное соответствие итоговых сумм ценам на рынке и принципу «цена-качество». </p>
+                    <h3 class="reason-title">3. ҚОЛЖЕТІМДІ БАҒА САЯСАТЫ</h3>
+                    <p class="reason-desc">Біздің қызметтеріміздің құны объективті нарықтық индикаторлар мен сапа көрсеткіштері негізінде қалыптасады. Біз – клиентке бағдарланған компаниямыз және қорытынды сомалардың нарықтағы бағаларға және «баға-сапа» қағидатына толық сәйкестігіне кепілдік береміз.</p>
                 </div>
 
                 <div class="reason-card">
                     <i class="fas fa-gavel reason-icon"></i>
-                    <h3 class="reason-title">4. ПРОФЕССИОНАЛЬНЫЙ ПОДХОД</h3>
-                    <p class="reason-desc">Мы обеспечиваем всестороннюю консультационную поддержку в рамках правового поля Республики Казахстан. Наши специалисты курируют Клиента на всех стадиях обучения, обеспечивая «обратную связь» и гарантируя  соответствие всех процессов актуальным законодательным требованиям.</p>
+                    <h3 class="reason-title">4. КӘСІБИ ТӘСІЛ</h3>
+                    <p class="reason-desc">Біз Қазақстан Республикасының құқықтық өрісі аясында жан-жақты консультациялық қолдауды қамтамасыз етеміз. Біздің мамандар Клиентті оқытудың барлық кезеңдерінде басқарып, «кері байланысты» қамтамасыз етеді және барлық процестердің өзекті заңнамалық талаптарға сәйкестігіне кепілдік береді.</p>
                 </div>
 
                 <div class="reason-card">
                     <i class="fas fa-hourglass-half reason-icon"></i>
-                    <h3 class="reason-title">5. Оптимизация временных ресурсов</h3>
-                    <p class="reason-desc">Внутренние процессы компании выстроены с приоритетом на оперативность. Мы обеспечиваем реализацию задач в сжатые сроки, сохраняя неизменно высокие стандарты качества.</p>
+                    <h3 class="reason-title">5. Уақыт ресурстарын оңтайландыру</h3>
+                    <p class="reason-desc">Компанияның ішкі процестері жеделдікке басымдық бере отырып құрылған. Біз сапаның жоғары стандарттарын сақтай отырып, міндеттерді қысқа мерзімде жүзеге асыруды қамтамасыз етеміз.</p>
                 </div>
             </div>
 
             <div class="reasons-footer-text">
-                Надёжный партнёр — это тот, кто снимает с вас лишние риски и берёт ответственность за результат.
+                Сенімді серіктес — бұл сізден артық тәуекелдерді алып тастап, нәтиже үшін жауапкершілікті өз мойнына алатын адам.
             </div>
         </div>
     </section>
@@ -1359,59 +1284,59 @@
     <section class="section-padding" id="advantages">
         <div class="container">
             <div style="text-align: center; margin-bottom: 50px;">
-                <h2 class="section-title" style="margin-bottom: 20px;">НАШИ КОНКУРЕНТНЫЕ ПРЕИМУЩЕСТВА<br>
-                    <span class="text-cyan">ТЕХНОЛОГИЧНОСТЬ И СКОРОСТЬ</span>
+                <h2 class="section-title" style="margin-bottom: 20px;">БІЗДІҢ БӘСЕЛЕКЕЛІК АРТЫҚШЫЛЫҚТАРЫМЫЗ<br>
+                    <span class="text-cyan">ТЕХНОЛОГИЯЛЫЛЫҚ ЖӘНЕ ЖЫЛДАМДЫҚ</span>
                 </h2>
                 <p class="adv-lead">
-                    Мы объединили экспертный подход в обучении с передовыми цифровыми решениями.<br>
-                    Платформа SafetyAll экономит время ваших сотрудников и обеспечивает прозрачность аттестации.
+                    Біз оқытудағы сараптамалық тәсілді озық цифрлық шешімдермен біріктірдік.<br>
+                    SafetyAll платформасы қызметкерлеріңіздің уақытын үнемдейді және аттестаттаудың ашықтығын қамтамасыз етеді.
                 </p>
             </div>
 
             <div class="adv-grid">
                 <div class="adv-card">
                     <i class="fas fa-language adv-icon"></i>
-                    <h3 class="adv-title">Обучение на двух языках</h3>
+                    <h3 class="adv-title">Екі тілде оқыту</h3>
                     <p class="adv-desc">
-                        Весь образовательный процесс, включая итоговое тестирование, доступен на государственом и русском языках, что обеспечивает полное соответствие законодательству Республики Казахстан.
+                        Бүкіл оқу процесі, соның ішінде қорытынды тестілеу, мемлекеттік және орыс тілдерінде қолжетімді, бұл Қазақстан Республикасының заңнамасына толық сәйкестікті қамтамасыз етеді.
                     </p>
                 </div>
 
                 <div class="adv-card">
                     <i class="fas fa-brain adv-icon"></i>
-                    <h3 class="adv-title">Персональный ИИ-Помощник</h3>
+                    <h3 class="adv-title">Жеке ИИ-Көмекші</h3>
                     <div class="ai-features">
                         <div class="ai-item">
-                            <strong>Живой диалог:</strong> Интерактивное обучение на 10+ языках.
+                            <strong>Жанды диалог:</strong> 10+ тілде интерактивті оқыту.
                         </div>
                         <div class="ai-item">
-                            <strong>Свобода запроса:</strong> ИИ объясняет сложные темы простыми словами.
+                            <strong>Сұрау еркіндігі:</strong> ИИ күрделі тақырыптарды қарапайым сөздермен түсіндіреді.
                         </div>
                         <div class="ai-item">
-                            <strong>Готовые сценарии:</strong> Разборы реальных кейсов и ситуаций.
+                            <strong>Дайын сценарийлер:</strong> Нақты кейстер мен жағдайларды талдау.
                         </div>
                     </div>
                     <button class="btn btn-primary" id="open-video-btn" style="width: 100%; margin-top: 20px; font-size: 14px; padding: 12px;">
-                        <i class="fas fa-play-circle" style="margin-right: 10px;"></i> Как пользоваться обучением ИИ
+                        <i class="fas fa-play-circle" style="margin-right: 10px;"></i> ИИ оқытуды қалай қолдану керек
                     </button>
                 </div>
 
                 <div class="adv-card">
                     <i class="fas fa-mobile-alt adv-icon"></i>
-                    <h3 class="adv-title">Мобильное обучение</h3>
+                    <h3 class="adv-title">Мобильді оқыту</h3>
                     <p class="adv-desc">
-                        Платформа полностью адаптирована под мобильные устройства. Сотрудники проходят обучение, смотрят видео и сдают тесты прямо со смартфона — без отрыва от производства и поиска компьютера.
+                        Платформа мобильді құрылғыларға толық бейімделген. Қызметкерлер өндірістен қол үзбей және компьютер іздемей-ақ, тікелей смартфоннан оқудан өтеді, бейнероликтер көреді және тест тапсырады.
                     </p>
                     <button class="btn btn-primary" id="open-mobile-video-btn" style="width: 100%; margin-top: 20px; font-size: 14px; padding: 12px;">
-                        <i class="fas fa-play-circle" style="margin-right: 10px;"></i> о платформе обучения
+                        <i class="fas fa-play-circle" style="margin-right: 10px;"></i> Оқыту платформасы туралы
                     </button>
                 </div>
 
                 <div class="adv-card">
                     <i class="fas fa-bolt adv-icon"></i>
-                    <h3 class="adv-title">Оперативная отправка результата в папку документов</h3>
+                    <h3 class="adv-title">Нәтижені құжаттар папкасына жедел жіберу</h3>
                     <p class="adv-desc">
-                        После тестирования вы получаете скан-версии протоколов и удостоверений — в папку общего доступа, ссылка на которую будет выслана на вашу почту. Оригиналы документов отправляются к вам курьером или почтой.
+                        Тестілеуден кейін сіз хаттамалар мен куәліктердің скан-нұсқаларын ортақ қолжетімді папкаға аласыз, оның сілтемесі поштаңызға жіберіледі. Құжаттардың түпнұсқалары сізге курьермен немесе пошта арқылы жіберіледі.
                     </p>
                 </div>
             </div>
@@ -1421,9 +1346,9 @@
     <section class="section-padding" id="courses">
         <div class="container">
             <div style="text-align: center; margin-bottom: 60px;">
-                <h2 class="section-title" style="margin-bottom: 20px;">КАТАЛОГ КУРСОВ</h2>
+                <h2 class="section-title" style="margin-bottom: 20px;">КУРСТАР КАТАЛОГЫ</h2>
                 <p style="color: var(--text-muted); font-size: 16px; letter-spacing: 0.5px;">
-                    Системное обучение по ключевым направлениям безопасности труда
+                    Еңбек қауіпсіздігінің негізгі бағыттары бойынша жүйелі оқыту
                 </p>
             </div>
 
@@ -1434,9 +1359,9 @@
                         <i class="fas fa-hard-hat module-icon"></i>
                         <div class="module-indicator"></div>
                     </div>
-                    <h3 class="module-title">Безопасность и<br>охрана труда</h3>
-                    <p class="module-desc">Базовые нормы и правила безопасности для всех категорий сотрудников.</p>
-                    <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1i9BoK9d9YOT_FtcnLThs4qRLXJHQNXws/preview">Подробнее</button>
+                    <h3 class="module-title">Еңбек қауіпсіздігі және<br>еңбекті қорғау</h3>
+                    <p class="module-desc">Барлық санаттағы қызметкерлер үшін қауіпсіздіктің негізгі нормалары мен ережелері.</p>
+                    <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1i9BoK9d9YOT_FtcnLThs4qRLXJHQNXws/preview">Толығырақ</button>
                 </div>
 
                 <div class="course-module">
@@ -1444,9 +1369,9 @@
                         <i class="fas fa-industry module-icon"></i>
                         <div class="module-indicator"></div>
                     </div>
-                    <h3 class="module-title">Промышленная<br>безопасность</h3>
-                    <p class="module-desc">Требования безопасности к опасным устройствам и на опасных производственных объектах.</p>
-                     <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1Fx2fJ3AdBvTC2fYNVKjK8bZWDEsQlclv/preview">Подробнее</button>
+                    <h3 class="module-title">Өнеркәсіптік<br>қауіпсіздік</h3>
+                    <p class="module-desc">Қауіпті құрылғыларға және қауіпті өндірістік объектілердегі қауіпсіздік талаптары.</p>
+                     <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1Fx2fJ3AdBvTC2fYNVKjK8bZWDEsQlclv/preview">Толығырақ</button>
                 </div>
 
                 <div class="course-module">
@@ -1454,9 +1379,9 @@
                         <i class="fas fa-fire-extinguisher module-icon"></i>
                         <div class="module-indicator"></div>
                     </div>
-                    <h3 class="module-title">Пожарно-технический<br>минимум</h3>
-                    <p class="module-desc">Профилактика возгораний и порядок действий при ЧС.</p>
-                     <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1XoBbuimrZ9vMyi9dy_4V2g11oqgfRRgB/preview">Подробнее</button>
+                    <h3 class="module-title">Өрт-техникалық<br>минимум</h3>
+                    <p class="module-desc">Өрттің алдын алу және ТЖ кезіндегі іс-қимыл тәртібі.</p>
+                     <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1XoBbuimrZ9vMyi9dy_4V2g11oqgfRRgB/preview">Толығырақ</button>
                 </div>
 
                 <div class="course-module">
@@ -1464,9 +1389,9 @@
                         <i class="fas fa-bolt module-icon"></i>
                         <div class="module-indicator"></div>
                     </div>
-                    <h3 class="module-title">Электробезопасность</h3>
-                    <p class="module-desc">Безопасная работа с электроустановками и получение группы допуска.</p>
-                     <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1J_uKX8b5i9Nyp8eoG8Sq6JJaXgXCowh2/preview">Подробнее</button>
+                    <h3 class="module-title">Электр қауіпсіздігі</h3>
+                    <p class="module-desc">Электр қондырғыларымен қауіпсіз жұмыс және рұқсат тобын алу.</p>
+                     <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1J_uKX8b5i9Nyp8eoG8Sq6JJaXgXCowh2/preview">Толығырақ</button>
                 </div>
 
                 <div class="course-module">
@@ -1474,9 +1399,9 @@
                         <i class="fas fa-building module-icon"></i>
                         <div class="module-indicator"></div>
                     </div>
-                    <h3 class="module-title">Работы на<br>высоте</h3>
-                    <p class="module-desc">Требования безопасности при организации и проведении работ на высоте, применение систем спасения.</p>
-                     <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1lBaEH6vEkdKXaW6BliRa3JRNHZUFbCIy/preview">Подробнее</button>
+                    <h3 class="module-title">Биіктіктегі<br>жұмыстар</h3>
+                    <p class="module-desc">Биіктікте жұмыстарды ұйымдастыру және жүргізу кезіндегі қауіпсіздік талаптары, құтқару жүйелерін қолдану.</p>
+                     <button class="module-btn course-video-btn" data-video-src="https://drive.google.com/file/d/1lBaEH6vEkdKXaW6BliRa3JRNHZUFbCIy/preview">Толығырақ</button>
                 </div>
 
             </div>
@@ -1485,7 +1410,7 @@
 
     <section class="section-padding" id="process">
         <div class="container">
-            <h2 class="section-title">КАК ПРОХОДИТ <span class="text-cyan">ОБУЧЕНИЕ</span></h2>
+            <h2 class="section-title">ОҚУ <span class="text-cyan">ҚАЛАЙ ӨТЕДІ</span></h2>
             
             <div class="timeline-container">
                 <div class="timeline-line">
@@ -1496,8 +1421,8 @@
                     <div class="timeline-dot"></div>
                     <div class="glass-panel timeline-content">
                         <div class="step-num">1</div>
-                        <h4>Заявка на сайте</h4>
-                        <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Оставьте заявку, чтобы менеджер связался с вами.</p>
+                        <h4>Сайттағы өтінім</h4>
+                        <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Менеджер сізбен хабарласуы үшін өтінім қалдырыңыз.</p>
                     </div>
                 </div>
 
@@ -1505,8 +1430,8 @@
                     <div class="timeline-dot"></div>
                     <div class="glass-panel timeline-content">
                         <div class="step-num">2</div>
-                        <h4>Консультация</h4>
-                        <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Подбор необходимого курса и программы.</p>
+                        <h4>Кеңес беру</h4>
+                        <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Қажетті курс пен бағдарламаны таңдау.</p>
                     </div>
                 </div>
 
@@ -1514,8 +1439,8 @@
                     <div class="timeline-dot"></div>
                     <div class="glass-panel timeline-content">
                         <div class="step-num">3</div>
-                        <h4>Оплата</h4>
-                        <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Заключение договора и оплата счета.</p>
+                        <h4>Төлем</h4>
+                        <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Шарт жасасу және шотты төлеу.</p>
                     </div>
                 </div>
 
@@ -1523,8 +1448,8 @@
                     <div class="timeline-dot"></div>
                     <div class="glass-panel timeline-content">
                         <div class="step-num">4</div>
-                        <h4>Доступ к платформе</h4>
-                        <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Сотрудники получают логин и пароль для обучения.</p>
+                        <h4>Платформаға қолжетімділік</h4>
+                        <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Қызметкерлер оқу үшін логин мен құпия сөз алады.</p>
                     </div>
                 </div>
 
@@ -1532,8 +1457,8 @@
                     <div class="timeline-dot"></div>
                     <div class="glass-panel timeline-content">
                         <div class="step-num">5</div>
-                        <h4>Тестирование</h4>
-                        <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Проверка знаний онлайн в удобное время, без привязки к времени и месту.</p>
+                        <h4>Тестілеу</h4>
+                        <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Уақыт пен орынға байланбай, ыңғайлы уақытта онлайн білімді тексеру.</p>
                     </div>
                 </div>
 
@@ -1541,8 +1466,8 @@
                     <div class="timeline-dot"></div>
                     <div class="glass-panel timeline-content">
                         <div class="step-num">6</div>
-                        <h4>Получение документов</h4>
-                        <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Оригиналы протоколов и удостоверений.</p>
+                        <h4>Құжаттарды алу</h4>
+                        <p style="font-size: 14px; color: var(--text-muted); margin-top: 10px;">Хаттамалар мен куәліктердің түпнұсқалары.</p>
                     </div>
                 </div>
 
@@ -1552,16 +1477,16 @@
 
     <section class="section-padding" id="documents">
         <div class="container">
-            <h2 class="section-title">ВАШИ <span class="text-cyan">ДОКУМЕНТЫ</span></h2>
+            <h2 class="section-title">СІЗДІҢ <span class="text-cyan">ҚҰЖАТТАРЫҢЫЗ</span></h2>
             <div class="docs-container">
                 <div class="doc-paper">
-                    <h4 style="text-align: center; border-bottom: 2px solid #000; margin-bottom: 20px;">УДОСТОВЕРЕНИЕ</h4>
-                    <p style="font-size: 12px;">Подтверждение проверки знаний по охране труда.</p>
+                    <h4 style="text-align: center; border-bottom: 2px solid #000; margin-bottom: 20px;">КУӘЛІК</h4>
+                    <p style="font-size: 12px;">Еңбекті қорғау бойынша білімді тексеруді растау.</p>
                     <div class="stamp">OK</div>
                 </div>
                 <div class="doc-paper">
-                    <h4 style="text-align: center; border-bottom: 2px solid #000; margin-bottom: 20px;">ПРОТОКОЛ</h4>
-                    <p style="font-size: 12px;">Результаты проверки знаний комиссии.</p>
+                    <h4 style="text-align: center; border-bottom: 2px solid #000; margin-bottom: 20px;">ХАТТАМА</h4>
+                    <p style="font-size: 12px;">Комиссияның білім тексеру нәтижелері.</p>
                     <div class="stamp">OK</div>
                 </div>
             </div>
@@ -1570,22 +1495,22 @@
 
     <section class="section-padding" style="text-align: center; position: relative;">
         <div class="container">
-            <h2 style="margin-bottom: 20px;">ГОТОВЫ НАЧАТЬ?</h2>
-            <button class="btn btn-primary open-modal-btn" style="transform: scale(1.1);">Начать обучение</button>
+            <h2 style="margin-bottom: 20px;">БАСТАУҒА ДАЙЫНСЫЗ БА?</h2>
+            <button class="btn btn-primary open-modal-btn" style="transform: scale(1.1);">Оқуды бастау</button>
         </div>
     </section>
 
     <section class="section-padding" id="contacts">
         <div class="container">
             <div class="glass-panel contacts-center" style="padding: 60px;">
-                <h2 style="margin-bottom: 30px;">КОНТАКТЫ</h2>
+                <h2 style="margin-bottom: 30px;">БАЙЛАНЫС</h2>
                 <h3 style="color: white; margin-bottom: 10px; font-size: 24px;">ТОО "Safetyall"</h3>
                 <div style="width: 50px; height: 3px; background: var(--accent-cyan); margin: 0 auto 30px auto;"></div>
                 
                 <ul class="contacts-list" style="font-size: 18px;">
                     <li style="margin-bottom: 30px; display: flex; align-items: flex-start;">
                         <i class="fas fa-map-marker-alt text-cyan" style="width: 30px; margin-top: 6px;"></i>
-                        <span style="line-height: 1.4;">г. Алматы, мкн "Мамыр",<br>бульвар Садовый, дом 3, офис 1</span>
+                        <span style="line-height: 1.4;">Алматы қ., "Мамыр" ш/а,<br>Садовый гүлзары, 3 үй, 1 кеңсе</span>
                     </li>
                     <li style="margin-bottom: 30px; display: flex; align-items: flex-start;">
                         <i class="fas fa-phone text-cyan" style="width: 30px; margin-top: 6px;"></i>
@@ -1601,7 +1526,7 @@
                 </ul>
 
                 <div style="margin-top: 40px;">
-                    <a href="https://wa.me/7017161721" class="btn btn-primary" target="_blank">Написать менеджеру</a>
+                    <a href="https://wa.me/7017161721" class="btn btn-primary" target="_blank">Менеджерге жазу</a>
                 </div>
 
             </div>
@@ -1613,19 +1538,19 @@
             <div class="footer-grid">
                 <div>
                     <a href="#home" class="logo scroll-trigger">SAFETY<span>ALL</span></a>
-                    <p style="color: #666; font-size: 14px; margin-top: 10px;">Профессиональное обучение по безопасности и охране труда.</p>
+                    <p style="color: #666; font-size: 14px; margin-top: 10px;">Еңбек қауіпсіздігі және еңбекті қорғау бойынша кәсіби оқыту.</p>
                     <img src="https://images.fillout.com/orgid-544431/flowpublicid-bkL8jQr3u4us/widgetid-meta-link-thumbnail/gQQX8rdS5GFMDmdbudTs5R/756d2146-533d-46b9-9d71-5123d701de08.jpg?a=tXHe5jztzvsufFhjNgSzZN" alt="Logo" class="footer-logo-img">
                 </div>
                 <div>
                     <h5 style="color: white; margin-bottom: 20px;">Навигация</h5>
                     <ul class="footer-links">
-                        <li><a href="#about" class="scroll-trigger">О компании</a></li>
-                        <li><a href="#courses" class="scroll-trigger">Курсы</a></li>
-                        <li><a href="#documents" class="scroll-trigger">Документы</a></li>
+                        <li><a href="#about" class="scroll-trigger">Компания туралы</a></li>
+                        <li><a href="#courses" class="scroll-trigger">Курстар</a></li>
+                        <li><a href="#documents" class="scroll-trigger">Құжаттар</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h5 style="color: white; margin-bottom: 20px;">Контакты</h5>
+                    <h5 style="color: white; margin-bottom: 20px;">Байланыс</h5>
                     <ul class="footer-links" style="font-size: 14px; color: var(--text-muted);">
                         <li><a href="mailto:ritm_asia@mail.ru">ritm_asia@mail.ru</a></li>
                         <li><a href="tel:+77017161721">+7-701-716-1721</a></li>
@@ -1639,58 +1564,9 @@
     <script src="https://unpkg.com/@elevenlabs/convai-widget-embed@beta" async type="text/javascript"></script>
 
     <script>
-        // --- PRELOADER LOGIC ---
-        // Сначала блокируем скролл
-        document.body.style.overflow = 'hidden';
-
-        // Данные для анимации
-        const preloader = document.getElementById('preloader');
-        const percentText = document.getElementById('loader-percent');
-        const loaderText = document.getElementById('loader-text');
-        const barFill = document.getElementById('loader-bar-fill');
-        
-        let progress = { value: 0 };
-        const messages = [
-            "Загрузка сайта...",
-            "Подключение виртуального помощника...",
-            "SafetyAll рады приветствовать Вас!"
-        ];
-
-        // Используем GSAP для плавного счета от 0 до 100 за 3 секунды
-        gsap.to(progress, {
-            value: 100,
-            duration: 3,
-            ease: "power2.inOut",
-            onUpdate: function() {
-                let current = Math.round(progress.value);
-                percentText.innerText = current + "%";
-                barFill.style.width = current + "%";
-
-                // Логика смены текста
-                if (current < 30) {
-                    loaderText.innerText = messages[0];
-                } else if (current < 70) {
-                    loaderText.innerText = messages[1];
-                } else {
-                    loaderText.innerText = messages[2];
-                    loaderText.style.color = "var(--accent-cyan)"; // Подсветка финал. фразы
-                }
-            },
-            onComplete: function() {
-                // Когда загрузка 100%, плавно убираем прелоадер
-                gsap.to(preloader, {
-                    opacity: 0,
-                    duration: 0.8,
-                    delay: 0.2,
-                    onComplete: () => {
-                        preloader.style.display = "none";
-                        document.body.style.overflow = "auto";
-                        // Запускаем анимацию Героя только сейчас
-                        heroTimeline.play(); 
-                    }
-                });
-            }
-        });
+        // --- PRELOADER REMOVED ---
+        // Скролл разблокирован по умолчанию
+        document.body.style.overflow = 'auto';
 
 
         // --- 1. GLOBAL BACKGROUND SYSTEM ---
@@ -1861,10 +1737,7 @@
         const closeVideoBtn = document.getElementById('close-video-btn');
         const videoFrame = document.getElementById('training-video');
         
-        // Link for "Как пользоваться обучением ИИ" (оставил прежнюю, так как вы не прислали новую)
         const videoSrc1 = "https://drive.google.com/file/d/1GSqcGR0vU0yAMkv-ab--3RFdDTZ3HJ5I/preview";
-        
-        // Link for "О платформе обучения" (Ваша новая ссылка)
         const videoSrc2 = "https://drive.google.com/file/d/1xImFt6LqfxcEju5IXI-76TJpeCZO-28w/preview";
 
         const openVideoModal = (e, src) => {
@@ -1951,6 +1824,11 @@
                 },
                 y: 30, opacity: 0, duration: 0.8, ease: "power2.out"
             });
+        });
+        
+        // Так как прелоадер убран, запускаем анимацию героя сразу после загрузки страницы
+        window.addEventListener('load', () => {
+            heroTimeline.play();
         });
     </script>
 </body>
